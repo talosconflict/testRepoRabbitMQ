@@ -1,0 +1,17 @@
+com/example/demo/repositories/UserDeviceRepository.class
+com/example/demo/entities/UserDevice.class
+com/example/demo/services/UserDeviceService.class
+com/example/demo/controller/DeviceController.class
+com/example/demo/services/UserIntegrationService.class
+com/example/demo/entities/Device.class
+com/example/demo/dto/UserDeviceAssignmentRequest.class
+com/example/demo/dto/UserDTO.class
+com/example/demo/services/DeviceService.class
+com/example/demo/repositories/DeviceRepository.class
+com/example/demo/entities/UserDevice$UserDeviceBuilder.class
+com/example/demo/dto/DeviceDTO.class
+com/example/demo/entities/UserRole.class
+com/example/demo/config/AppConfig.class
+com/example/demo/DevicesApplication.class
+com/example/demo/entities/Device$DeviceBuilder.class
+com/example/demo/controller/UserDeviceController.class

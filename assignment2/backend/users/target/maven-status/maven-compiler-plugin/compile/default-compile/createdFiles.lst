@@ -1,0 +1,11 @@
+com/example/demo/DemoApplication.class
+com/example/demo/dto/LoginRequest.class
+com/example/demo/dto/UserDTO.class
+com/example/demo/entities/User$UserBuilder.class
+com/example/demo/repositories/UserRepository.class
+com/example/demo/controller/UserController.class
+com/example/demo/entities/UserRole.class
+com/example/demo/config/AppConfig.class
+com/example/demo/services/UserService.class
+com/example/demo/security/SecurityConfig.class
+com/example/demo/entities/User.class

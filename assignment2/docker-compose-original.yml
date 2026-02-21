@@ -1,0 +1,76 @@
+version: "3.9"
+
+services:
+  traefik:
+    image: traefik:v2.9
+    command:
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+      - "--api.dashboard=true"
+    ports:
+      - "80:80"
+      - "8080:8080" #dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.yml:/traefik.yml
+    container_name: traefik
+  db:
+    image: postgres:18
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: users
+      POSTGRES_USER: dan
+      POSTGRES_PASSWORD: dan
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgres/data
+
+  frontend:
+    build: ./state-class-tutorial/
+    container_name: frontend
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=PathPrefix(`/`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+
+  user-service:
+    build: ./backend/users
+    container_name: "user-service"
+    expose:
+      - "8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/users
+      SPRING_DATASOURCE_USER: dan
+      SPRING_DATASOURCE_PASSWORD: dan
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.user.rule=PathPrefix(`/user`)"
+      - "traefik.http.middlewares.user-stripprefix.stripprefix.prefixes=/user"
+      - "traefik.http.routers.user.middlewares=user-stripprefix"
+      - "traefik.http.services.user.loadbalancer.server.port=8080"
+
+  device-service:
+    build: ./backend/devices/
+    container_name: "device-service"
+    expose:
+      - "8081"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/devices
+      SPRING_DATASOURCE_USER: dan
+      SPRING_DATASOURCE_PASSWORD: dan
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.device.rule=PathPrefix(`/device`)"
+      - "traefik.http.middlewares.device-stripprefix.stripprefix.prefixes=/device"
+      - "traefik.http.routers.device.middlewares=device-stripprefix"
+      - "traefik.http.services.device.loadbalancer.server.port=8081"
+
+volumes:
+  postgres_data:

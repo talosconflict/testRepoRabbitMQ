@@ -1,0 +1,15 @@
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/entities/Device.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/dto/UserDeviceAssignmentRequest.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/dto/UserDTO.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/entities/UserRole.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/services/UserIntegrationService.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/dto/DeviceDTO.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/DevicesApplication.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/entities/UserDevice.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/repositories/DeviceRepository.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/config/AppConfig.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/services/DeviceService.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/services/UserDeviceService.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/controller/DeviceController.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/repositories/UserDeviceRepository.java
+/home/epsilonoclon/Work/assignment1/backend/devices/src/main/java/com/example/demo/controller/UserDeviceController.java

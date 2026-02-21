@@ -1,0 +1,140 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Animated gradient background */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff0077, #7a00ff, #00e0ff, #00ff88);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  overflow: hidden;
+}
+
+/* Background animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass card */
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  width: 350px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.login-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Input fields */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.3rem;
+  text-align: left;
+}
+
+.login-field label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.login-field input {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-field input:focus {
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00aaff;
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffff);
+  background-size: 300% 100%;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.login-button:hover {
+  background-position: 100% 0;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00cc;
+}
+
+/* Error / success messages */
+.error {
+  color: #ff6b6b;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.success {
+  color: #00ffcc;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Optional glow animation behind card */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  animation: pulse 6s infinite ease-in-out;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .login-card {
+    width: 90%;
+    padding: 2rem 1.5rem;
+  }
+}
+
+

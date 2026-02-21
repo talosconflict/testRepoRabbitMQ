@@ -1,0 +1,176 @@
+/* Import same font for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.container-register {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a00, #ff0057, #ff00ff, #ff6bf0);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shared gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass form box */
+.register-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  padding: 3rem 2.5rem;
+  width: 400px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.register-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+}
+
+/* Input fields */
+.register-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.3rem;
+  text-align: left;
+}
+
+.register-field label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.register-field input {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.register-field input:focus {
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff9900;
+}
+
+/* Button */
+.register-button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff0066, #ff6600, #ffcc00);
+  background-size: 300% 100%;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.register-button:hover {
+  background-position: 100% 0;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff6600, 0 0 30px #ff00cc;
+}
+
+/* Link to login */
+.login-link {
+  margin-top: 1.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.login-link a {
+  color: #ffcc00;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.login-link a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffcc00, #ff00ff);
+  transition: width 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffcc00;
+}
+
+.login-link a:hover::after {
+  width: 100%;
+}
+
+/* Soft background glow */
+.register-form::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  animation: pulse 6s infinite ease-in-out;
+  z-index: -1;
+  border-radius: 25px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-form {
+    width: 90%;
+    padding: 2rem 1.5rem;
+  }
+  .register-title {
+    font-size: 1.8rem;
+  }
+}
+

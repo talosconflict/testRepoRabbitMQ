@@ -1,0 +1,8 @@
+Sender/config/MessagingConfig.class
+Sender/controller/SimulatorController.class
+Sender/simulator/DeviceSimulator$1.class
+Sender/simulator/DeviceSimulator.class
+Sender/config/WebConfig$1.class
+Sender/config/WebConfig.class
+Sender/entity/DeviceMeasurement.class
+Sender/SenderApplication.class
